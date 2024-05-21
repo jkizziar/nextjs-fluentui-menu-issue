@@ -2,33 +2,9 @@
 
 import React from 'react';
 
-import {
-	Button,
-	FluentProvider,
-	Menu,
-	MenuItem,
-	MenuList,
-	MenuPopover,
-	MenuTrigger,
-	RendererProvider,
-	SSRProvider,
-	createDOMRenderer,
-	webLightTheme,
-} from '@fluentui/react-components';
+import { Button, Menu, MenuItem, MenuList, MenuPopover, MenuTrigger } from '@fluentui/react-components';
 
 export default function Home() {
-	const [renderer] = React.useState(() => createDOMRenderer());
-	return (
-		<RendererProvider renderer={renderer}>
-			<FluentProvider theme={webLightTheme}>
-				<SSRProvider>
-					<TestMenu />
-				</SSRProvider>
-			</FluentProvider>
-		</RendererProvider>
-	);
-}
-function TestMenu() {
 	return (
 		<Menu>
 			<MenuTrigger>
