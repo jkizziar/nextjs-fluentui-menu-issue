@@ -4,5 +4,4 @@ const nextConfig = {
 		swcPlugins: [['fluentui-next-appdir-directive', { paths: ['@griffel', '@fluentui'] }]],
 	},
 };
-
-module.exports = nextConfig;
+export default nextConfig;
