@@ -10,14 +10,22 @@ import {
 	MenuList,
 	MenuPopover,
 	MenuTrigger,
+	RendererProvider,
+	SSRProvider,
+	createDOMRenderer,
 	webLightTheme,
 } from '@fluentui/react-components';
 
 export default function Home() {
+	const [renderer] = React.useState(() => createDOMRenderer());
 	return (
-		<FluentProvider theme={webLightTheme}>
-			<TestMenu />
-		</FluentProvider>
+		<RendererProvider renderer={renderer}>
+			<FluentProvider theme={webLightTheme}>
+				<SSRProvider>
+					<TestMenu />
+				</SSRProvider>
+			</FluentProvider>
+		</RendererProvider>
 	);
 }
 function TestMenu() {
